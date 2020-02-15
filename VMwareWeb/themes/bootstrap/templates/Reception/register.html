@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+
+
+<form>
+    {% csrf_token %}
+    邮箱：<input type="text" id="email"> <span class="errors" id="email_error"></span><br>
+    用户名：<input type="text" id="username"> <span class="errors" id="username_error"></span><br>
+    手机号码：<input type="text" id="phone"><span class="errors" id="phone_error"></span><br>
+    密码：<input type="password" id="password"> <span class="errors" id="password_error"></span><br>
+    头像: <input type="file" id="avatar"><br>
+    <input type="button" value="注册" class="register">
+</form>
+
+<script>
+    $(".register").click(function(){
+
+        //带有文件上传的固定格式：
+        var formdata = new FormData();
+        formdata.append("email", $("#email").val() );
+        formdata.append("username", $("#username").val());
+        formdata.append("phone", $("#phone").val());
+        formdata.append("password", $("#password").val());
+        formdata.append("password", $("#avatar")[0].fields[0]);
+        $.ajax({
+            url: "{% url 'register' %}",
+            type: "post",
+            contentType: false,
+            processData: false,
+            data: formdata, // 如果不带文件上传则使用 data: {}
+            success: function(data){
+                console.log(data)  //json字符串
+                var data = JSON.parse(data)  //反序列化成 object {}
+
+            }
+        })
+    })
+
+    $("#phone").blur(function(){
+        var phone = $("#phone").val();
+        if(!(/^1[3456789]\d{9}$/.test(phone))){
+            $("#phone_error").html("手机号码有误，请重填");
+        return false;
+    }
+    })
+
+</script>
+
+</body>
+</html>
