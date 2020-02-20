@@ -1,0 +1,287 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'Reception/img/favicon.png' %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'Reception/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Reception/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Reception/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'Reception/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Reception/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'Reception/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'Reception/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'Reception/css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'Reception/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'Reception/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'Reception/css/style.css' %}">
+
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    {% block extra_style %}
+
+    {% endblock %}
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- header-start -->
+<header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid p-0">
+                <div class="row align-items-center no-gutters ">
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="logo-img">
+                            <a href="{% url 'index' %}">
+                                <img src="{% static 'Reception/img/logo1.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-7">
+                        <div class="main-menu  d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a class="active" href="{% url 'index' %}">主页</a></li>
+                                    <li><a href="package.html">产品</a></li>
+                                    <li><a href="#">博客 <i class="ti-angle-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="blog.html">博客</a></li>
+                                            <li><a href="single-blog.html">single-blog</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">云主机 <i class="ti-angle-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="elements.html">elements</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="Support.html">技术支持</a></li>
+                                    <li><a href="about.html">关于</a></li>
+                                    <li><a href="contact.html">联系我们</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    {# 会员是否登陆的导航栏 #}
+                    {% if request.session.is_login %}
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="log_chat_area d-flex align-items-center">
+                                <div class="main-menu  d-none d-lg-block ">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li style="width: 360px">
+                                                <a class="nav-link dropdown-toggle nav-dropdown-user"
+                                                   id="dropdownMenu2" data-toggle="dropdown"
+                                                   aria-haspopup="true" aria-expanded="false">
+                                                    <img src="{{ request.session.user_avatar }}" height="35"
+                                                         width="35" alt="Avatar"
+                                                         class="img-circle"
+                                                         style="border-radius: 50%; border: solid #c2c2c2;">
+                                                </a>
+                                                <ul class="submenu"
+                                                    style="width: 230px; border-radius: 3px; border: solid lightgrey 1px">
+                                                    <li style="margin: 20px 20px 20px 10px;">
+                                                        <div class="media">
+                                                            <div>
+                                                                <img src="{{ request.session.user_avatar }}"
+                                                                     height="45" width="45"
+                                                                     alt="Avatar"
+                                                                     style="border-radius: 50%; border: solid #c2c2c2;">
+                                                            </div>
+                                                            <div style="margin: 0px 10px;">
+                                                                <h5>ahao</h5>
+                                                                <h6>{{ request.session.user_email }}</h6>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="hr20">
+                                                            <h5><a href="#">会员中心</a></h5>
+                                                            <h5><a href="#">修改密码</a></h5>
+                                                            <h5><a href="{% url 'logout' %}" class="">退出登陆</a></h5>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="log_chat_area d-flex align-items-center">
+                                <a href="#test-form" class="login popup-with-form">
+                                    <i class="flaticon-user"></i>
+                                    <span>用户登陆</span>
+                                </a>
+                                <div class="live_chat_btn">
+                                    <a class="boxed_btn_green" href="#">
+                                        <i class="flaticon-chat"></i>
+                                        <span>联系我们</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header-end -->
+
+<!-- slider_area_start -->
+{% block main %}
+
+{% endblock %}
+
+
+<!-- footer -->
+<footer class="footer">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="footer_widget">
+                        <div class="footer_logo">
+                            <a href="#">
+                                <img src="../../static/Reception/img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <p class="footer_text doanar"><a class="first" href="#">+86 13228108248
+                        </a> <br>
+                            <a href="#">xuhao@stu.cdu.edu.cn</a></p>
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-facebook-square"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            服务
+                        </h3>
+                        <ul>
+                            <li><a href="#">虚拟主机</a></li>
+                            <li><a href="#">域名</a></li>
+                            <li><a href="#">博客</a></li>
+                            <li><a href="#">虚拟系统</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-6 col-lg-2">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            导航
+                        </h3>
+                        <ul>
+                            <li><a href="#">主页</a></li>
+                            <li><a href="#">会员中心</a></li>
+                            <li><a href="#">关于七彩祥云</a></li>
+                            <li><a href="#">新闻中心</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            新闻
+                        </h3>
+                        <form action="#" class="newsletter_form">
+                            <input type="text" placeholder="邮箱地址">
+                            <button type="submit">订阅</button>
+                        </form>
+                        <p class="newsletter_text">订阅新闻以获取更新</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copy-right_text">
+        <div class="container">
+            <div class="footer_border"></div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <p class="copy_right text-center">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        七彩祥云 版权所有<i class="fa fa-heart-o"
+                                    aria-hidden="true"></i> by <a
+                            href="#" target="_blank">ahao</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer -->
+<!-- link that opens popup -->
+
+
+<!-- JS here -->
+<script src="{% static 'Reception/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<script src="{% static 'Reception/js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'Reception/js/popper.min.js' %}"></script>
+<script src="{% static 'Reception/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'Reception/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'Reception/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'Reception/js/ajax-form.js' %}"></script>
+<script src="{% static 'Reception/js/waypoints.min.js' %}"></script>
+<script src="{% static 'Reception/js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'Reception/js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'Reception/js/scrollIt.js' %}"></script>
+<script src="{% static 'Reception/js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'Reception/js/wow.min.js' %}"></script>
+<script src="{% static 'Reception/js/nice-select.min.js' %}"></script>
+<script src="{% static 'Reception/js/jquery.slicknav.min.js' %}"></script>
+<script src="{% static 'Reception/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'Reception/js/plugins.js' %}"></script>
+<script src="{% static 'Reception/js/gijgo.min.js' %}"></script>
+
+<!--contact js-->
+<script src="{% static 'Reception/js/contact.js' %}"></script>
+<script src="{% static 'Reception/js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'Reception/js/jquery.form.js' %}"></script>
+<script src="{% static 'Reception/js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'Reception/js/mail-script.js' %}"></script>
+<script src="{% static 'Reception/js/main.js' %}"></script>
+
+{#<script src="{% static 'Reception/usernav/js/jquery.min.js' %}"></script>#}
+{#<script src="{% static 'Reception/usernav/js/landio.js' %}"></script>#}
+{% block extra_script %}
+
+{% endblock %}
+
+</body>
+</html>

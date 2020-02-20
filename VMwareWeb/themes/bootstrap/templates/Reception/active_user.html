@@ -1,0 +1,48 @@
+{% extends 'Reception/base.html' %}
+{% block title %}
+    账号激活
+{% endblock %}
+
+{% block extra_style %}
+    <style>
+    {# 逗号分隔具有相同样式的不同class #}
+    .msg,.send-msg {
+        color: red;
+        font-size: 20px;
+    }
+    </style>
+{% endblock %}
+
+{% block main %}
+    		<div class="bradcam_area breadcam_bg overlay2">
+				<h3>邮箱激活页面</h3>
+                <hr class="hr20">
+                {% if status %}
+                    <span class="msg">{{ msg }}</span>
+                {% else %}
+                    <span class="msg">{{ msg }}</span><br>
+                    <button type="button" class="btn btn-success send-email-code">重新发送</button>
+                    <p class="send-msg"></p>
+                {% endif %}
+
+			</div>
+{% endblock %}
+
+{% block extra_script %}
+    <script>
+        $(".send-email-code").click(function(){
+            $.ajax({
+                url: "{% url 'active_user_again' %}",
+                type: "get",
+                data: {},
+                success: function(data){
+                    setTimeout(function(){ //设置1s后清除msg
+                        $(".send-msg").text(data.msg);
+                    },1000)
+                }
+            })
+        })
+    </script>
+
+{% endblock %}
+

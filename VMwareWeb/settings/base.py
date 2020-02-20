@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+from email.utils import formataddr
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -49,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -145,3 +147,13 @@ STATICFILES_DIRS = [
 # 文件存放的位置
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+from email.utils import formataddr
+
+# 发送邮箱验证码
+EMAIL_HOST = "smtp.exmail.qq.com"     # 服务器
+EMAIL_PORT = 465                 # 一般情况下都为25
+EMAIL_HOST_USER = "xuhao@stu.cdu.edu.cn"     # 账号
+EMAIL_HOST_PASSWORD = "iDR45HRMDN2Lb8sg"          # 密码 (注意：这里的密码指的是授权码)
+EMAIL_USE_SSL = True       # 一般都为False
+EMAIL_FROM = formataddr(["七彩祥云", "xuhao@stu.cdu.edu.cn"])       # 邮箱来自

@@ -1,99 +1,11 @@
-<!doctype html>
+{% extends 'Reception/base.html' %}
 {% load static %}
-<html class="no-js" lang="zxx">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>七彩祥云</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block title %}
+七彩祥云-校园大学生云主机专家
+{% endblock %}
 
-    <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'Reception/img/favicon.png' %}">
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- CSS here -->
-    <link rel="stylesheet" href="{% static 'Reception/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'Reception/css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'Reception/css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'Reception/css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'Reception/css/themify-icons.css' %}">
-    <link rel="stylesheet" href="{% static 'Reception/css/nice-select.css' %}">
-    <link rel="stylesheet" href="{% static 'Reception/css/flaticon.css' %}">
-    <link rel="stylesheet" href="{% static 'Reception/css/gijgo.css' %}">
-    <link rel="stylesheet" href="{% static 'Reception/css/animate.css' %}">
-    <link rel="stylesheet" href="{% static 'Reception/css/slicknav.css' %}">
-    <link rel="stylesheet" href="{% static 'Reception/css/style.css' %}">
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-</head>
-
-<body>
-    <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
-    <!-- header-start -->
-    <header>
-        <div class="header-area ">
-            <div id="sticky-header" class="main-header-area">
-                <div class="container-fluid p-0">
-                    <div class="row align-items-center no-gutters">
-                        <div class="col-xl-2 col-lg-2">
-                            <div class="logo-img">
-                                <a href="index.html">
-                                    <img src="{% static 'Reception/img/logo1.png' %}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-7 col-lg-7">
-                            <div class="main-menu  d-none d-lg-block">
-                                <nav>
-                                    <ul id="navigation">
-                                        <li><a class="active" href="index.html">home</a></li>
-                                        <li><a href="package.html">Package</a></li>
-                                        <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">blog</a></li>
-                                                <li><a href="single-blog.html">single-blog</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                            <ul class="submenu">
-                                                <li><a href="elements.html">elements</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="Support.html">Support</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                            <div class="log_chat_area d-flex align-items-center">
-                                <a href="#test-form" class="login popup-with-form">
-                                    <i class="flaticon-user"></i>
-                                    <span>log in</span>
-                                </a>
-                                <div class="live_chat_btn">
-                                    <a class="boxed_btn_green" href="#">
-                                        <i class="flaticon-chat"></i>
-                                        <span>Live Chat</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- header-end -->
-
+{% block main %}
     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1 overlay2">
@@ -101,12 +13,12 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-9">
                         <div class="slider_text text-center">
-                            <p>The Best Domain & Hosting Provider In The Area</p>
-                            <h3>Go Big with your next Domain</h3>
+                            <p>七彩祥云-大学生校园云主机提供平台</p>
+                            <h3>尝试解放你低配置的电脑</h3>
                             <div class="find_dowmain">
                                 <form action="#" class="find_dowmain_form">
-                                    <input type="text" placeholder="Find your domain">
-                                    <button type="submit">search</button>
+                                    <input type="text" placeholder="搜索你需要的云主机">
+                                    <button type="submit">搜索</button>
                                 </form>
                             </div>
                         </div>
@@ -118,25 +30,30 @@
     <!-- slider_area_end -->
 
     <section class="ftco-section ftco-partner">
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="{% static 'Reception/img/partner/partner-1.png' %}" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="{% static 'Reception/img/partner/partner-2.png' %}" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="{% static 'Reception/img/partner/partner-3.png' %}" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="{% static 'Reception/img/partner/partner-4.png' %}" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    			<div class="col-sm ftco-animate">
-    				<a href="#" class="partner"><img src="{% static 'Reception/img/partner/partner-5.png' %}" class="img-fluid" alt="Colorlib Template"></a>
-    			</div>
-    		</div>
-    	</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm ftco-animate">
+                    <a href="#" class="partner"><img src="{% static 'Reception/img/partner/partner-1.png' %}"
+                                                     class="img-fluid" alt="Colorlib Template"></a>
+                </div>
+                <div class="col-sm ftco-animate">
+                    <a href="#" class="partner"><img src="{% static 'Reception/img/partner/partner-2.png' %}"
+                                                     class="img-fluid" alt="Colorlib Template"></a>
+                </div>
+                <div class="col-sm ftco-animate">
+                    <a href="#" class="partner"><img src="{% static 'Reception/img/partner/partner-3.png' %}"
+                                                     class="img-fluid" alt="Colorlib Template"></a>
+                </div>
+                <div class="col-sm ftco-animate">
+                    <a href="#" class="partner"><img src="{% static 'Reception/img/partner/partner-4.png' %}"
+                                                     class="img-fluid" alt="Colorlib Template"></a>
+                </div>
+                <div class="col-sm ftco-animate">
+                    <a href="#" class="partner"><img src="{% static 'Reception/img/partner/partner-5.png' %}"
+                                                     class="img-fluid" alt="Colorlib Template"></a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- prising_area_start -->
@@ -219,11 +136,11 @@
                             <nav>
                                 <div class="nav" id="nav-tab" role="tablist">
                                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"
-                                        href="#nav-home" role="tab" aria-controls="nav-home"
-                                        aria-selected="true">Features</a>
+                                       href="#nav-home" role="tab" aria-controls="nav-home"
+                                       aria-selected="true">Features</a>
                                     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
-                                        href="#nav-profile" role="tab" aria-controls="nav-profile"
-                                        aria-selected="false">Advanced Features</a>
+                                       href="#nav-profile" role="tab" aria-controls="nav-profile"
+                                       aria-selected="false">Advanced Features</a>
                                 </div>
                             </nav>
                         </div>
@@ -234,7 +151,7 @@
                 <div class="col-xl-12">
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                            aria-labelledby="nav-home-tab">
+                             aria-labelledby="nav-home-tab">
                             <div class="row">
                                 <div class="col-xl-6">
                                     <div class="single_features">
@@ -450,13 +367,14 @@
                             <div class="card-header" id="headingTwo">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
                                         <i class="flaticon-info"></i> Is WordPress hosting worth it?
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-                                data-parent="#accordion">
+                                 data-parent="#accordion">
                                 <div class="card-body">
                                     Our set he for firmament morning sixth subdue darkness creeping gathered divide our
                                     let god moving. Moving in fourth air night bring upon
@@ -467,14 +385,15 @@
                             <div class="card-header" id="headingOne">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            data-target="#collapseOne" aria-expanded="false"
+                                            aria-controls="collapseOne">
                                         <i class="flaticon-info"></i> What are the advantages <span>of WordPress hosting
                                             over shared?</span>
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion"
-                                style="">
+                                 style="">
                                 <div class="card-body">
                                     Our set he for firmament morning sixth subdue darkness creeping gathered divide our
                                     let god moving. Moving in fourth air night bring upon
@@ -485,14 +404,14 @@
                             <div class="card-header" id="headingThree">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" data-toggle="collapse"
-                                        data-target="#collapseThree" aria-expanded="false"
-                                        aria-controls="collapseThree">
+                                            data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
                                         <i class="flaticon-info"></i> Will you transfer my site?
                                     </button>
                                 </h5>
                             </div>
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                                data-parent="#accordion">
+                                 data-parent="#accordion">
                                 <div class="card-body">
                                     Our set he for firmament morning sixth subdue darkness creeping gathered divide our
                                     let god moving. Moving in fourth air night bring upon
@@ -503,7 +422,7 @@
                             <div class="card-header" id="heading_4">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" data-toggle="collapse"
-                                        data-target="#collapse_4" aria-expanded="false" aria-controls="collapse_4">
+                                            data-target="#collapse_4" aria-expanded="false" aria-controls="collapse_4">
                                         <i class="flaticon-info"></i> Why should I host with Hostza?
                                     </button>
                                 </h5>
@@ -519,7 +438,7 @@
                             <div class="card-header" id="heading_5">
                                 <h5 class="mb-0">
                                     <button class="btn btn-link collapsed" data-toggle="collapse"
-                                        data-target="#collapse_5" aria-expanded="false" aria-controls="collapse_5">
+                                            data-target="#collapse_5" aria-expanded="false" aria-controls="collapse_5">
                                         <i class="flaticon-info"></i> How do I get started <span>with Shared
                                             Hosting?</span>
                                     </button>
@@ -538,7 +457,6 @@
         </div>
     </div>
     <!-- faq_area_end -->
-
 
 
     <!-- latest_new_area_start -->
@@ -569,7 +487,7 @@
                                 <a href="#">12 Jun, 2019 in <span>Hosting tips</span> </a>
                             </div>
                             <h3><a href="#">Commitment to dedicated
-                                    Support</a></h3>
+                                Support</a></h3>
                             <p class="news_info">Firmament morning sixth subdue darkness</p>
                         </div>
                     </div>
@@ -586,7 +504,7 @@
                                 <a href="#">12 Jun, 2019 in <span>Hosting tips</span> </a>
                             </div>
                             <h3><a href="#">Commitment to dedicated
-                                    Support</a></h3>
+                                Support</a></h3>
                             <p class="news_info">Firmament morning sixth subdue darkness</p>
                         </div>
                     </div>
@@ -603,7 +521,7 @@
                                 <a href="#">12 Jun, 2019 in <span>Hosting tips</span> </a>
                             </div>
                             <h3><a href="#">Commitment to dedicated
-                                    Support</a></h3>
+                                Support</a></h3>
                             <p class="news_info">Firmament morning sixth subdue darkness</p>
                         </div>
                     </div>
@@ -632,127 +550,42 @@
     </div>
     <!-- lets_launch_end -->
 
-    <!-- footer -->
-    <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <div class="footer_logo">
-                                <a href="#">
-                                    <img src="../../static/Reception/img/logo.png" alt="">
-                                </a>
-                            </div>
-                            <p class="footer_text doanar"> <a class="first" href="#">+10 783 467 3789
-                                </a> <br>
-                                <a href="#">hostza@support.com</a></p>
-                            <div class="socail_links">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-facebook-square"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                service
-                            </h3>
-                            <ul>
-                                <li><a href="#">Hosting</a></li>
-                                <li><a href="#">Domain</a></li>
-                                <li><a href="#">Wordpress</a></li>
-                                <li><a href="#">Shared Hosting</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Navigation
-                            </h3>
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Rooms</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">News</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6 col-lg-4">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Newsletter
-                            </h3>
-                            <form action="#" class="newsletter_form">
-                                <input type="text" placeholder="Enter your mail">
-                                <button type="submit">Sign Up</button>
-                            </form>
-                            <p class="newsletter_text">Subscribe newsletter to get updates</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copy-right_text">
-            <div class="container">
-                <div class="footer_border"></div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <p class="copy_right text-center">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- footer -->
-    <!-- link that opens popup -->
-
     <!-- form itself end-->
+    {# 登陆表单 #}
     <form id="test-form" class="white-popup-block mfp-hide">
+        {% csrf_token %}
         <div class="popup_box ">
             <div class="popup_inner">
                 <div class="logo text-center">
                     <a href="#">
-                        <img src="../../static/Reception/img/form-logo.png" alt="">
+                        <img src="{% static 'Reception/img/form-logo.png' %}" alt="">
                     </a>
                 </div>
-                <h3>Sign in</h3>
+                <h3 style="text-align: center">用户登陆</h3>
                 <form action="#">
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
-                            <input type="email" placeholder="Enter email">
+                            <input type="email" placeholder="邮箱" id="email">
                         </div>
                         <div class="col-xl-12 col-md-12">
-                            <input type="password" placeholder="Password">
+                            <input type="password" placeholder="密码" id="password">
+                        </div>
+                        <div class="col-xl-6 col-xl-6">
+                            <img style="width: 180px; height: 60px" id="valid-code-img"
+                                 src="{% url 'valid_code_img' %}">
+                        </div>
+                        <div class="col-xl-6 col-xl-6">
+                            <input type="text" placeholder="验证码" id="valid-code">
                         </div>
                         <div class="col-xl-12">
-                            <button type="submit" class="boxed_btn_green">Sign in</button>
+                            <button type="button" class="boxed_btn_green" id="login-user">登 陆</button>
+                        </div>
+                        <div class="col-xl-12" style="text-align: center; color: red; margin-top: 8px;">
+                            <span id="login-msg"></span>
                         </div>
                     </div>
                 </form>
-                <p class="doen_have_acc">Don’t have an account? <a class="dont-hav-acc" href="#test-form2">Sign Up</a>
+                <p class="doen_have_acc">还没有帐户？ <a class="dont-hav-acc" href="#test-form2">注 册</a>
                 </p>
             </div>
         </div>
@@ -760,28 +593,33 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- form itself end -->
 
     <!-- form itself end-->
+    {# 注册表单 #}
     <form id="test-form2" class="white-popup-block mfp-hide">
+        {% csrf_token %}
         <div class="popup_box ">
             <div class="popup_inner">
                 <div class="logo text-center">
                     <a href="#">
-                        <img src="../../static/Reception/img/form-logo.png" alt="">
+                        <img src="{% static 'Reception/img/form-logo.png' %}" alt="">
                     </a>
                 </div>
-                <h3>Resistration</h3>
+                <h3 style="text-align: center;">注 册</h3>
                 <form action="#">
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
-                            <input type="email" placeholder="Enter email">
+                            <input type="email" placeholder="邮箱" id="sign-up-email">
                         </div>
                         <div class="col-xl-12 col-md-12">
-                            <input type="password" placeholder="Password">
+                            <input type="password" placeholder="密码" id="sign-up-password1">
                         </div>
                         <div class="col-xl-12 col-md-12">
-                            <input type="Password" placeholder="Confirm password">
+                            <input type="password" placeholder="确认密码" id="sign-up-password2">
                         </div>
                         <div class="col-xl-12">
-                            <button type="submit" class="boxed_btn_green">Sign Up</button>
+                            <button type="button" class="boxed_btn_green" id="sign-up">注 册</button>
+                        </div>
+                        <div class="col-xl-12" style="text-align: center; color: red; margin-top: 8px;">
+                            <span id="sign-up-msg"></span>
                         </div>
                     </div>
                 </form>
@@ -789,36 +627,81 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </form>
     <!-- form itself end -->
+{% endblock %}
 
 
-    <!-- JS here -->
-    <script src="../../static/Reception/js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="../../static/Reception/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="../../static/Reception/js/popper.min.js"></script>
-    <script src="../../static/Reception/js/bootstrap.min.js"></script>
-    <script src="../../static/Reception/js/owl.carousel.min.js"></script>
-    <script src="../../static/Reception/js/isotope.pkgd.min.js"></script>
-    <script src="../../static/Reception/js/ajax-form.js"></script>
-    <script src="../../static/Reception/js/waypoints.min.js"></script>
-    <script src="../../static/Reception/js/jquery.counterup.min.js"></script>
-    <script src="../../static/Reception/js/imagesloaded.pkgd.min.js"></script>
-    <script src="../../static/Reception/js/scrollIt.js"></script>
-    <script src="../../static/Reception/js/jquery.scrollUp.min.js"></script>
-    <script src="../../static/Reception/js/wow.min.js"></script>
-    <script src="../../static/Reception/js/nice-select.min.js"></script>
-    <script src="../../static/Reception/js/jquery.slicknav.min.js"></script>
-    <script src="../../static/Reception/js/jquery.magnific-popup.min.js"></script>
-    <script src="../../static/Reception/js/plugins.js"></script>
-    <script src="../../static/Reception/js/gijgo.min.js"></script>
+{% block extra_script %}
+    <script>
+        // 验证码图片刷新
+        $("#valid-code-img").click(function () {
+            $(this)[0].src += "?";
+        })
 
-    <!--contact js-->
-    <script src="../../static/Reception/js/contact.js"></script>
-    <script src="../../static/Reception/js/jquery.ajaxchimp.min.js"></script>
-    <script src="../../static/Reception/js/jquery.form.js"></script>
-    <script src="../../static/Reception/js/jquery.validate.min.js"></script>
-    <script src="../../static/Reception/js/mail-script.js"></script>
+        //登陆验证
+        $("#login-user").click(function () {
+            $.ajax({
+                url: "{% url 'login' %}",
+                type: "post",
+                data: {
+                    email: $("#email").val(),
+                    password: $("#password").val(),
+                    valid_code: $("#valid-code").val(),
+                    csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val()
+                },
+                success: function (data) {
+                    console.log(data);
+                    if (data.user) {
+                        console.log(data)
+                        $("#login-msg").text(data.msg);
+                        setInterval(sign_Up_succeed, 1000);
+                    } else {
+                        $("#login-msg").text(data.msg);
+                        setTimeout(function(){ //设置1s后清除msg
+                            $("#login-msg").text("")
+                        }, 1000)
+                    }
+                }
+            })
+        })
+        var y = 1;
+        function sign_Up_succeed() { //登陆成功延时跳转
+            if (y <= 0) {
+                location.href = "{% url 'index' %}";  //登陆成功跳转
+            }
+            x--;
+        }
 
-    <script src="../../static/Reception/js/main.js"></script>
-</body>
-
-</html>
+        //用户注册
+        $("#sign-up").click(function () {
+            $.ajax({
+                url: "{% url 'sign_up' %}",
+                type: "post",
+                data: {
+                    csrfmiddlewaretoken: $("[name='csrfmiddlewaretoken']").val(),
+                    email: $("#sign-up-email").val(),
+                    password1: $("#sign-up-password1").val(),
+                    password2: $("#sign-up-password2").val(),
+                },
+                success: function (data) {
+                    console.log(data)  //json字符串
+                    if (data.user) {
+                        $("#sign-up-msg").text(data.msg);
+                        setInterval(sign_Up_succeed, 1000);  //延时跳转
+                    } else {
+                        $("#sign-up-msg").text(data.msg);
+                        setTimeout(function(){ //设置1s后清除msg
+                            $("#sign-up-msg").text("");
+                        },1000)
+                    }
+                }
+            })
+        })
+        var x = 2;
+        function sign_Up_succeed() { //注册成功延时跳转
+            if (x <= 0) {
+                location.href = "{% url 'index' %}";
+            }
+            x--;
+        }
+    </script>
+{% endblock %}
